@@ -1,0 +1,16 @@
+
+<h1>
+    Jai Mata Di
+</h1>
+
+<h2>Namaste Rails</h2>
+<%# %>
+<ul>
+<%@files.each do |file|%>
+<li>The file name is: <%=file%></li>
+<%end%>
+</ul>
+
+<h3>Time: <%=@time%></h3>
+
+<p>It's time to say <%= link_to "goodbye", say_goodbye_path%> </p>

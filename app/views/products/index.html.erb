@@ -1,0 +1,45 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Products</h1>
+
+<div id="products">
+  <%# here we rendering the _product.html.erb for eevery product ing the 
+  @products collection %>
+
+
+<table>
+  <tfoot>
+    <tr>
+      <td colspan="3"> this is my table data </td>
+      </tr>
+    </tfoot>
+
+    <tbody>
+
+      <%@products.each do |product|%> 
+
+      <tr class = "<%= cycle('odd','even')%>">
+          <td>
+           <%= image_tag('https://images.unsplash.com/photo-1700070929576-e07a0945e246?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',{alt: "this is an image", size: "100x105"})%>
+          </td>
+          <td>I am showing table data</td>
+          <td>
+            <%=truncate(strip_tags("<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet nisl purus in mollis. Molestie a iaculis at erat pellentesque adipiscing. Fusce ut placerat orci nulla. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Nec nam aliquam sem et. In dictum non consectetur a erat nam at. Tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse. Et tortor at risus viverra adipiscing at in tellus. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Eros donec ac odio tempor orci dapibus ultrices in iaculis. Tellus orci ac auctor augue mauris augue neque. Blandit volutpat maecenas volutpat blandit aliquam.</p>"),length:100)%>
+            </td>
+
+            <td>
+              <%=link_to 'Google','https://www.google.com/',target:"_jaimatadi"%>
+              </td>
+        </tr>
+
+      <%end%>
+      </tbody>
+
+
+
+  </table>
+</div>
+
+<%= link_to "New product", new_product_path %>
+
+
